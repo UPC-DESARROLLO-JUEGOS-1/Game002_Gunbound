@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\libs">
+      <UniqueIdentifier>{a05590b6-befb-48db-8286-23ff1fb4f3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libs">
+      <UniqueIdentifier>{4fc413a4-03b7-44f3-942a-5f27426b91e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{605e2bc0-7b3d-4ccf-9abb-c2f5ca8b93bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\content">
+      <UniqueIdentifier>{da989ffe-6b21-4e96-b789-41d7c393ff89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{ad3f57d3-26d8-4ff9-8f24-25682b157392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\content">
+      <UniqueIdentifier>{10926aac-063d-40d0-939e-9dc548a493de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{fde47037-5f94-4111-848b-4b9534a8f946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{fcb0fc11-2e47-46ac-87c6-c758729aab63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render">
+      <UniqueIdentifier>{50596b57-3cf5-4be1-bbba-9d7cfadbfdcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\render">
+      <UniqueIdentifier>{9d416d44-4605-4015-9f5f-f7da70fa42ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\shader">
+      <UniqueIdentifier>{6477ddcc-d060-420f-a57d-b6c2ed414a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\render\shader">
+      <UniqueIdentifier>{0928ea76-eaa3-4052-b970-6ee5917f6a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\camera">
+      <UniqueIdentifier>{4130b9d5-585d-4919-9f4e-b82a1b4879d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\render\camera">
+      <UniqueIdentifier>{7e6102ce-8441-4142-956e-9aff7fae356f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\graphic">
+      <UniqueIdentifier>{8a05a4ab-1fbe-46ea-b41a-b81a99689995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\graphic\D2D">
+      <UniqueIdentifier>{866feb49-3c49-45d8-923c-8e7c08a5173b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\render\graphic">
+      <UniqueIdentifier>{fd3c5a0d-88bf-4dd7-bfcb-2abb892406dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\render\graphic\D2D">
+      <UniqueIdentifier>{11009812-be1c-4209-ae30-987377501dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\graphic\D2D\data">
+      <UniqueIdentifier>{ac7c81b1-2baf-412b-8342-16c6b8a3ce1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\render\shader\D2D">
+      <UniqueIdentifier>{537d5567-c7c8-4f55-8c20-4c47712fe823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{af937ff5-792b-4253-9edb-3d826a042029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scenes">
+      <UniqueIdentifier>{e572856e-98e1-46a5-aebf-0de18a307cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scenes">
+      <UniqueIdentifier>{b7bdc81a-4a5f-4402-a463-8767615dc176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\enum">
+      <UniqueIdentifier>{40d949b6-15e9-4a1f-a7e3-158ef5bbd0ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PicoPNG.h">
+      <Filter>Header Files\libs</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageContent.h">
+      <Filter>Header Files\core\content</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseContent.h">
+      <Filter>Header Files\core\content</Filter>
+    </ClInclude>
+    <ClInclude Include="FatalError.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentManager.h">
+      <Filter>Header Files\core\content</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseShader.h">
+      <Filter>Header Files\core\render\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Header Files\core\render\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCamera.h">
+      <Filter>Header Files\core\render\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera2D.h">
+      <Filter>Header Files\core\render\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable2D.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Quad.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexData.h">
+      <Filter>Header Files\core\render\graphic\D2D\data</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteShader.h">
+      <Filter>Header Files\core\render\shader\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveShader.h">
+      <Filter>Header Files\core\render\shader\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Ellipse.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTexturedSprite2D.h">
+      <Filter>Header Files\core\render\graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeInterval.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionHelper.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGraph.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumWindowFlags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGenerator.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PicoPNG.cpp">
+      <Filter>Source Files\libs</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageContent.cpp">
+      <Filter>Source Files\core\content</Filter>
+    </ClCompile>
+    <ClCompile Include="FatalError.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentManager.cpp">
+      <Filter>Source Files\core\content</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseShader.cpp">
+      <Filter>Source Files\core\render\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Source Files\core\render\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera2D.cpp">
+      <Filter>Source Files\core\render\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawable2D.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Quad.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Ellipse.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTexturedSprite2D.cpp">
+      <Filter>Source Files\core\render\graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeInterval.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGraph.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
