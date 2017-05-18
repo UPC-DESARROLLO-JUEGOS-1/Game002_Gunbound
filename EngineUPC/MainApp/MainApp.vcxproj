@@ -137,15 +137,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GActor.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GBaseBullet.cpp" />
+    <ClCompile Include="GBulletManager.cpp" />
+    <ClCompile Include="GLogicCamera.cpp" />
+    <ClCompile Include="GoundboundEngine.cpp" />
+    <ClCompile Include="GPlayer.cpp" />
+    <ClCompile Include="GPlayerBullet.cpp" />
+    <ClCompile Include="GPlayerControl.cpp" />
+    <ClCompile Include="GTurnManager.cpp" />
+    <ClCompile Include="GWorld.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h" />
     <ClInclude Include="AppSceneGraph.h" />
+    <ClInclude Include="GActor.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GBaseBullet.h" />
+    <ClInclude Include="GBulletManager.h" />
+    <ClInclude Include="GLogicCamera.h" />
+    <ClInclude Include="GoundboundEngine.h" />
+    <ClInclude Include="GPlayer.h" />
+    <ClInclude Include="GPlayerBullet.h" />
+    <ClInclude Include="GPlayerControl.h" />
+    <ClInclude Include="GTurnManager.h" />
+    <ClInclude Include="GWorld.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

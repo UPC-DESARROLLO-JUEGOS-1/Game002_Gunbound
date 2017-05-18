@@ -19,36 +19,132 @@
     <Filter Include="Header Files\Game">
       <UniqueIdentifier>{2bf6213a-be98-4364-b9ba-3d039a0df840}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Game\Scenes">
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{f76e9826-de93-4c2b-af2f-9efe1164224b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
       <UniqueIdentifier>{bb514002-b477-44ab-b923-a6404ecf43da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game\Scenes">
-      <UniqueIdentifier>{f76e9826-de93-4c2b-af2f-9efe1164224b}</UniqueIdentifier>
+    <Filter Include="Header Files\Game\Engine">
+      <UniqueIdentifier>{ebf3cd85-50e9-40c7-94a3-a0363946f46b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine">
+      <UniqueIdentifier>{449e3105-9fff-4958-8bc0-ae7751eb3173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Engine\actors">
+      <UniqueIdentifier>{0cfaeba0-a99b-4442-bbfd-ff06536e6e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Engine\actors\player">
+      <UniqueIdentifier>{f1dd8f7a-1548-4efb-87c0-e6e15e27f902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine\actors">
+      <UniqueIdentifier>{ca5a7bec-bd4f-4225-9708-d39292185f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine\actors\player">
+      <UniqueIdentifier>{b8c015fa-d87b-4f25-8a22-693a10e6673d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Engine\scene">
+      <UniqueIdentifier>{d78fa85c-aa6b-46cd-9b29-e494b85cdf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine\scene">
+      <UniqueIdentifier>{3b83e713-960d-40e5-bb70-2ccb6a125d2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine\actors\bullets">
+      <UniqueIdentifier>{d8e11219-3d29-4a3d-b1db-edc67940dc59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Engine\actors\bullets">
+      <UniqueIdentifier>{e47495da-0f5c-43b0-b039-198b074b582a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Engine\managers">
+      <UniqueIdentifier>{8d298597-9141-4133-b204-6b30b0494311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Engine\managers">
+      <UniqueIdentifier>{b0654b9b-8052-405e-8500-d373995b6f01}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GoundboundEngine.cpp">
+      <Filter>Source Files\Game\Engine</Filter>
+    </ClCompile>
     <ClCompile Include="GameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>Source Files\Game\Scenes</Filter>
+    <ClCompile Include="GActor.cpp">
+      <Filter>Source Files\Game\Engine\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GBaseBullet.cpp">
+      <Filter>Source Files\Game\Engine\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GPlayer.cpp">
+      <Filter>Source Files\Game\Engine\actors\player</Filter>
+    </ClCompile>
+    <ClCompile Include="GPlayerControl.cpp">
+      <Filter>Source Files\Game\Engine\actors\player</Filter>
+    </ClCompile>
+    <ClCompile Include="GWorld.cpp">
+      <Filter>Source Files\Game\Engine\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GPlayerBullet.cpp">
+      <Filter>Source Files\Game\Engine\actors\bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="GLogicCamera.cpp">
+      <Filter>Source Files\Game\Engine\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GBulletManager.cpp">
+      <Filter>Source Files\Game\Engine\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="GTurnManager.cpp">
+      <Filter>Source Files\Game\Engine\managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h">
-      <Filter>Header Files\Game\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="GameApp.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="AppSceneGraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoundboundEngine.h">
+      <Filter>Header Files\Game\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GActor.h">
+      <Filter>Header Files\Game\Engine\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GBaseBullet.h">
+      <Filter>Header Files\Game\Engine\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="GPlayer.h">
+      <Filter>Header Files\Game\Engine\actors\player</Filter>
+    </ClInclude>
+    <ClInclude Include="GPlayerControl.h">
+      <Filter>Header Files\Game\Engine\actors\player</Filter>
+    </ClInclude>
+    <ClInclude Include="GWorld.h">
+      <Filter>Header Files\Game\Engine\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GPlayerBullet.h">
+      <Filter>Header Files\Game\Engine\actors\bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="GLogicCamera.h">
+      <Filter>Header Files\Game\Engine\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GBulletManager.h">
+      <Filter>Header Files\Game\Engine\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GTurnManager.h">
+      <Filter>Header Files\Game\Engine\managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
