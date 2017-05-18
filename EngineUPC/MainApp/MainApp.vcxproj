@@ -137,7 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GActor.cpp" />
+    <ClCompile Include="GBaseActor.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GBaseBullet.cpp" />
@@ -156,7 +156,7 @@
   <ItemGroup>
     <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h" />
     <ClInclude Include="AppSceneGraph.h" />
-    <ClInclude Include="GActor.h" />
+    <ClInclude Include="GBaseActor.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GBaseBullet.h" />

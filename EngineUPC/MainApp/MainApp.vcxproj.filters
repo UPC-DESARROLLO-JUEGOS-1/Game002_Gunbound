@@ -78,9 +78,6 @@
     <ClCompile Include="GameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GActor.cpp">
-      <Filter>Source Files\Game\Engine\actors</Filter>
-    </ClCompile>
     <ClCompile Include="GBaseBullet.cpp">
       <Filter>Source Files\Game\Engine\actors</Filter>
     </ClCompile>
@@ -114,6 +111,9 @@
     <ClCompile Include="GunboundGameApp.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="GBaseActor.cpp">
+      <Filter>Source Files\Game\Engine\actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h">
@@ -124,9 +124,6 @@
     </ClInclude>
     <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GActor.h">
-      <Filter>Header Files\Game\Engine\actors</Filter>
     </ClInclude>
     <ClInclude Include="GameApp.h">
       <Filter>Header Files</Filter>
@@ -163,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="GunboundGameApp.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GBaseActor.h">
+      <Filter>Header Files\Game\Engine\actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
