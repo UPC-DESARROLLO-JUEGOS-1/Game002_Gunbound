@@ -61,6 +61,12 @@
     <Filter Include="Source Files\Game\Engine\managers">
       <UniqueIdentifier>{b0654b9b-8052-405e-8500-d373995b6f01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game\UI">
+      <UniqueIdentifier>{c2ba9c95-c28f-4ce3-a218-3864e8a621c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\UI">
+      <UniqueIdentifier>{abfb267d-8317-4617-a90a-7bf205b8ad8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="GoundboundEngine.cpp">
-      <Filter>Source Files\Game\Engine</Filter>
     </ClCompile>
     <ClCompile Include="GameApp.cpp">
       <Filter>Source Files</Filter>
@@ -102,6 +105,15 @@
     <ClCompile Include="GTurnManager.cpp">
       <Filter>Source Files\Game\Engine\managers</Filter>
     </ClCompile>
+    <ClCompile Include="GHud.cpp">
+      <Filter>Source Files\Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="GEngine.cpp">
+      <Filter>Source Files\Game\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GunboundGameApp.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h">
@@ -112,9 +124,6 @@
     </ClInclude>
     <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GoundboundEngine.h">
-      <Filter>Header Files\Game\Engine</Filter>
     </ClInclude>
     <ClInclude Include="GActor.h">
       <Filter>Header Files\Game\Engine\actors</Filter>
@@ -145,6 +154,15 @@
     </ClInclude>
     <ClInclude Include="GTurnManager.h">
       <Filter>Header Files\Game\Engine\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GHud.h">
+      <Filter>Header Files\Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GEngine.h">
+      <Filter>Header Files\Game\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GunboundGameApp.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

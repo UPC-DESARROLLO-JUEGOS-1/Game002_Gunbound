@@ -1,11 +1,11 @@
 #include "GLogicCamera.h"
 
 
-GLogicCamera::GCamera()
+GLogicCamera::GLogicCamera()
 {
 }
 
 
-GLogicCamera::~GCamera()
+GLogicCamera::~GLogicCamera()
 {
 }
