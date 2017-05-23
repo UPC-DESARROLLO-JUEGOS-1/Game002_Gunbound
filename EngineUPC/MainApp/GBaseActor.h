@@ -3,11 +3,13 @@
 #include <FrameworkUPC\Sprite.h>
 
 class GLogicCamera;
+class GEngine;
 
 class GBaseActor
 {
 public:
-	GBaseActor();
+	GBaseActor() {}
+	GBaseActor(GEngine* engine);
 	~GBaseActor();
 
 	float inline GetX() { return mX; }
@@ -21,6 +23,7 @@ protected:
 	float mX;
 	float mY;
 
+	GEngine* mEngine;
 	Sprite mSprite;
 	GLogicCamera* mLogicCamera;
 };
