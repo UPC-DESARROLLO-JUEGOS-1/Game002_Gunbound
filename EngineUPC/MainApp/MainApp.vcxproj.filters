@@ -122,9 +122,6 @@
     <ClInclude Include="AppSceneGraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -163,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="GBaseActor.h">
       <Filter>Header Files\Game\Engine\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumAppScenes.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

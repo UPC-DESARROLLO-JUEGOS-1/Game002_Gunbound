@@ -1,6 +1,7 @@
 #pragma once
 
 #include <FrameworkUPC\BaseScene.h>
+#include "GunboundGameApp.h"
 
 class GameScene : public BaseScene
 {
@@ -21,5 +22,5 @@ public:
 	void OnKeyUp(SDL_Keycode key);
 
 private:
-
+	GunboundGameApp* mGGApp;
 };

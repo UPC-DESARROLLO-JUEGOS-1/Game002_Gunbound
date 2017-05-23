@@ -154,8 +154,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\FrameworkUPC\EnumAppScenes.h" />
     <ClInclude Include="AppSceneGraph.h" />
+    <ClInclude Include="EnumAppScenes.h" />
     <ClInclude Include="GBaseActor.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameScene.h" />
