@@ -1,11 +1,14 @@
 #pragma once
 
 class GBaseActor;
+class GEngine;
+class GWorld;
 
 class GLogicCamera
 {
 public:
-	GLogicCamera();
+	GLogicCamera(GEngine* engine);
+	GLogicCamera() {}
 	~GLogicCamera();
 
 	float inline GetX() { return mX; }
@@ -29,4 +32,7 @@ private:
 	float mHWidth;
 	float mHHeight;
 	GBaseActor* mCurrentTarget;
+
+	GEngine* mEngine;
+	GWorld* mWorld;
 };
