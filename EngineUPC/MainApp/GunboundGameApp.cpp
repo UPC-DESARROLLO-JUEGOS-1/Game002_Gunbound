@@ -29,9 +29,11 @@ void GunboundGameApp::OnKeyUp(SDL_Keycode key)
 void GunboundGameApp::Update(float dt)
 {
 	mEngine->Update(dt);
+	mHud->Update(dt);
 }
 
 void GunboundGameApp::Draw(float dt)
 {
 	mEngine->Draw(dt);
+	mHud->Draw(dt);
 }
