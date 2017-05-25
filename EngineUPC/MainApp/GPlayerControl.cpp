@@ -105,7 +105,7 @@ void GPlayerControl::Update(float dt)
 	if (mIsDown) mCurrentAngle += mAngleChangeSpeed*dt;
 	mCurrentAngle = MathUtils::Clamp(mCurrentAngle, -M_PI*0.5f, 0);
 
-	mCannonBody->SetX(mPlayerBody->GetPosition().x + mPlayerBody->GetVisibleWidth()*0.6f);
+	mCannonBody->SetX(mPlayer->GetX() + mPlayerBody->GetVisibleWidth()*0.6f);
 	mCannonBody->SetRotationZ(mCurrentAngle + M_PI*0.25f);
 }
 
