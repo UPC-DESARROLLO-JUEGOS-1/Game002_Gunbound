@@ -25,7 +25,7 @@ void GPlayer::Initialize(float x, float y, std::string path) {
 	mCannon.SetPivot(0.0f, 1.0f);
 
 	mPlayerControl = new GPlayerControl(this);
-	mPlayerControl->Initialize();
+	mPlayerControl->Initialize(&mSprite, &mCannon);
 }
 
 void GPlayer::Update(float dt) {
