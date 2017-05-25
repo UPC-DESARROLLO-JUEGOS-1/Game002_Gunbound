@@ -8,7 +8,9 @@
 class Sprite : public Drawable2D
 {
 public:
-	Sprite() {}
+	Sprite() :
+		pivot(0.0f, 0.0f)
+	{}
 	~Sprite()
 	{
 		content = nullptr;
@@ -25,11 +27,14 @@ public:
 	void Draw(float dt);
 
 	void SetColor(float r, float g, float b, float a);
+	void SetPivot(float x, float y);
+	void SetPivot(float value);
 
 protected:
 	int width, height;
 	int r, g, b, a;
 	ImageContent* content;
+	Vector2 pivot;
 
 	void BindData();
 };

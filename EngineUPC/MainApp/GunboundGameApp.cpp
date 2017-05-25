@@ -1,7 +1,7 @@
 #include "GunboundGameApp.h"
 
 GunboundGameApp* GunboundGameApp::GAMEAPP;
-GunboundGameApp * GunboundGameApp::GET_GAMEAPP() { 
+GunboundGameApp* GunboundGameApp::GET_GAMEAPP() { 
 	return GunboundGameApp::GAMEAPP; 
 }
 

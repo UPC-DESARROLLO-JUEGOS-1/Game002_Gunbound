@@ -58,7 +58,9 @@ void GPlayerControl::OnKeyUp(SDL_Keycode key) {
 	}
 }
 
-void GPlayerControl::Update(float dt) {
-
-
+void GPlayerControl::Update(float dt)
+{
+	SetSpeed(0, 0);
+	if (isLeft && !isRight) SetSpeed(-moveSpeed, 0);
+	if (isRight && !isLeft) SetSpeed(moveSpeed, 0);
 }

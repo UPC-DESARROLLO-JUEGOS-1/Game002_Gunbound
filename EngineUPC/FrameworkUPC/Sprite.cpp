@@ -1,6 +1,7 @@
 #include "Sprite.h"
 #include "GameFramework.h"
 #include "SpriteShader.h"
+#include "MathUtils.h"
 
 void Sprite::SetColor(float r, float g, float b, float a)
 {
@@ -10,6 +11,17 @@ void Sprite::SetColor(float r, float g, float b, float a)
 	this->a = a;
 
 	BindData();
+}
+
+void Sprite::SetPivot(float x, float y)
+{
+	pivot.x = MathUtils::Clamp(x, 0.0f, 1.0f);
+	pivot.y = MathUtils::Clamp(y, 0.0f, 1.0f);
+}
+
+void Sprite::SetPivot(float value)
+{
+	pivot.x = pivot.y = MathUtils::Clamp(value, 0.0f, 1.0f);
 }
 
 void Sprite::Initialize(float x, float y, const std::string path)
@@ -37,13 +49,13 @@ void Sprite::Update(float dt)
 		glm::vec3 scale(scale.x, scale.y, 0.0f);
 		glm::vec3 rotation(0.0f, 0.0f, 1.0f);
 
-		glm::vec3 center(width*0.5f, height*0.5f, 0.0f);
+		glm::vec3 pivotPos(width*pivot.x, height*pivot.y, 0.0f);
 
 		result = glm::translate(result, translate);
 		result = glm::scale(result, scale);
-		result = glm::translate(result, center);
+		result = glm::translate(result, pivotPos);
 		result = glm::rotate(result, rotationZ, rotation);
-		result = glm::translate(result, -center);
+		result = glm::translate(result, -pivotPos);
 
 		worldMatrix = result;
 		needMatrixUpdate = false;
