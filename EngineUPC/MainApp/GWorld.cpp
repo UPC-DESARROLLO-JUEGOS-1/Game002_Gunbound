@@ -12,15 +12,19 @@ GWorld::~GWorld()
 {
 }
 
-void GWorld::Initialize(std::string path) {
+void GWorld::Initialize(float x, float y, std::string path) {
+	mX = x;
+	mY = y;
+
 	mSprite.Initialize(0, 0, path);
 	mSprite.SetRenderCamera(GameFramework::GET_FRAMEWORK()->GetCamera());
 
-	mWorldWidth = mSprite.GetWidth();
-	mWorldHeight = mSprite.GetHeight();
-
 	mLogicCamera = GunboundGameApp::GET_GAMEAPP()->
 		GetEngine()->GetLogicCamera();
+
+	mWorldWidth = mSprite.GetWidth();
+	mWorldHeight = mSprite.GetHeight();
+	mOffsetY = mLogicCamera->GetHeight() - mWorldHeight;
 }
 
 bool GWorld::ExistsTerrainIn(int x, int y) {
@@ -50,6 +54,11 @@ bool GWorld::InsideArea(int x, int y) {
 void GWorld::Update(float dt) {
 	float sx = mX - mLogicCamera->GetX();
 	float sy = mY - mLogicCamera->GetY();
+
+	sx = sx < 0 ? 0 : sx;
+	sy = sy < 0 ? 0 : sy;
+
+	sy += mOffsetY;
 
 	mSprite.SetX(sx);
 	mSprite.SetY(sy);
