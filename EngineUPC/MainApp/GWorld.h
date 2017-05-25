@@ -9,7 +9,10 @@ class GWorld
 {
 public:
 	GWorld();
-	~GWorld();
+	~GWorld()
+	{
+		delete mWorldForces;
+	}
 
 	int inline GetWidth() { return mWorldWidth; }
 	int inline GetHeight() { return mWorldHeight; }

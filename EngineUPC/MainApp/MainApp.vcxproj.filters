@@ -87,9 +87,6 @@
     <ClCompile Include="GWorld.cpp">
       <Filter>Source Files\Game\Engine\scene</Filter>
     </ClCompile>
-    <ClCompile Include="GPlayerBullet.cpp">
-      <Filter>Source Files\Game\Engine\actors\bullets</Filter>
-    </ClCompile>
     <ClCompile Include="GLogicCamera.cpp">
       <Filter>Source Files\Game\Engine\scene</Filter>
     </ClCompile>
@@ -136,9 +133,6 @@
     </ClInclude>
     <ClInclude Include="GWorld.h">
       <Filter>Header Files\Game\Engine\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="GPlayerBullet.h">
-      <Filter>Header Files\Game\Engine\actors\bullets</Filter>
     </ClInclude>
     <ClInclude Include="GLogicCamera.h">
       <Filter>Header Files\Game\Engine\scene</Filter>

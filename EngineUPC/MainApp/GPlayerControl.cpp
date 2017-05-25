@@ -1,5 +1,5 @@
 #include "GPlayerControl.h"
-//#include "GunboundGameApp.h"
+#include "GunboundGameApp.h"
 #include "GPlayer.h"
 #include <FrameworkUPC\MathUtils.h>
 
@@ -24,7 +24,7 @@ GPlayerControl::~GPlayerControl()
 void GPlayerControl::Initialize(Sprite* playerBody, Sprite* cannonBody) {
 	mPlayerBody = playerBody;
 	mCannonBody = cannonBody;
-	//GunboundGameApp::GET_GAMEAPP()->GetEngine()->;
+	mStrengthChargeBar=GunboundGameApp::GET_GAMEAPP()->GetHud()->GetPlayerChargeBar();
 }
 
 void GPlayerControl::OnKeyDown(SDL_Keycode key) {
@@ -84,7 +84,7 @@ void GPlayerControl::Update(float dt)
 				Shoot();
 			}
 
-			//mStrengthChargeBar->SetScaleX(mCurrentCharge);
+			mStrengthChargeBar->SetScaleX(mCurrentCharge);
 		}
 		else if (!mAlreadyShot)
 		{
@@ -105,7 +105,9 @@ void GPlayerControl::Update(float dt)
 	if (mIsDown) mCurrentAngle += mAngleChangeSpeed*dt;
 	mCurrentAngle = MathUtils::Clamp(mCurrentAngle, -M_PI*0.5f, 0);
 
-	mCannonBody->SetX(mPlayerBody->GetPosition().x + mPlayerBody->GetVisibleWidth()*0.6f);
+	Vector2 pos = mPlayerBody->GetPosition();
+	mCannonBody->SetX(pos.x + mPlayerBody->GetVisibleWidth()*0.6f);
+	mCannonBody->SetY(pos.y - 6);
 	mCannonBody->SetRotationZ(mCurrentAngle + M_PI*0.25f);
 }
 
@@ -115,7 +117,7 @@ void GPlayerControl::ChargeShot()
 	{
 		mChargingShot = true;
 		mCurrentCharge = 0.0f;
-		//mStrengthChargeBar->SetScaleX(mCurrentCharge);
+		mStrengthChargeBar->SetScaleX(mCurrentCharge);
 	}
 }
 
