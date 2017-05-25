@@ -33,5 +33,8 @@ private:
 	GPlayer* mPlayer;
 	Sprite* mPlayerBody;
 	Sprite* mCannonBody;
+
+	void ChargeShot();
+	void Shoot();
 };
 

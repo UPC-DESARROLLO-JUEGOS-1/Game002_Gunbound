@@ -19,6 +19,8 @@ public:
 	void Update(float dt);
 	void Draw(float dt);
 
+	void Shoot(float angle, float strength);
+
 private:
 	GEngine* mEngine;
 	GPlayerControl* mPlayerControl;

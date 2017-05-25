@@ -4,9 +4,10 @@
 
 #include <FrameworkUPC\GameFramework.h>
 
-GBaseActor::GBaseActor(GEngine* engine)
+GBaseActor::GBaseActor(GEngine* engine) :
+	mEngine(engine),
+	objectAlive(true)
 {
-	mEngine = engine;
 }
 
 GBaseActor::~GBaseActor()

@@ -72,10 +72,34 @@ void GPlayerControl::OnKeyUp(SDL_Keycode key) {
 
 void GPlayerControl::Update(float dt)
 {
+	if (mIsSpacePressed)
+	{
+		if (mChargingShot)
+		{
+			mCurrentCharge += dt;
+
+			if (mCurrentCharge >= 1.0f)
+			{
+				mCurrentCharge = 1.0f;
+				Shoot();
+			}
+
+			//mStrengthChargeBar->SetScaleX(mCurrentCharge);
+		}
+		else if (!mAlreadyShot)
+		{
+			ChargeShot();
+		}
+	}
+	else
+	{
+		if (mChargingShot) Shoot();
+	}
+
 	float currentSpeed = 0;
 	if (mIsLeft) currentSpeed -= mMoveSpeed;
 	if (mIsRight) currentSpeed += mMoveSpeed;
-	mPlayerBody->Translate(currentSpeed*dt, 0);
+	mPlayer->Translate(currentSpeed*dt, 0);
 
 	if (mIsUp) mCurrentAngle -= mAngleChangeSpeed*dt;
 	if (mIsDown) mCurrentAngle += mAngleChangeSpeed*dt;
@@ -83,4 +107,22 @@ void GPlayerControl::Update(float dt)
 
 	mCannonBody->SetX(mPlayerBody->GetPosition().x + mPlayerBody->GetVisibleWidth()*0.6f);
 	mCannonBody->SetRotationZ(mCurrentAngle + M_PI*0.25f);
+}
+
+void GPlayerControl::ChargeShot()
+{
+	if (!mChargingShot)
+	{
+		mChargingShot = true;
+		mCurrentCharge = 0.0f;
+		//mStrengthChargeBar->SetScaleX(mCurrentCharge);
+	}
+}
+
+void GPlayerControl::Shoot()
+{
+	mChargingShot = false;
+	if (mIsSpacePressed) mAlreadyShot = true;
+
+	mPlayer->Shoot(mCurrentAngle, mMaxStrength*mCurrentCharge);
 }

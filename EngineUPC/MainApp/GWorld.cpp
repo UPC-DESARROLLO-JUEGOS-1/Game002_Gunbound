@@ -19,6 +19,8 @@ void GWorld::Initialize(std::string path) {
 	mWorldWidth = mSprite.GetWidth();
 	mWorldHeight = mSprite.GetHeight();
 
+	mWorldForces = new GWorldForces();
+
 	mLogicCamera = GunboundGameApp::GET_GAMEAPP()->
 		GetEngine()->GetLogicCamera();
 }
