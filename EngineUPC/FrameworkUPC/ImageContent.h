@@ -4,6 +4,7 @@
 #include <GL\glew.h>
 #include "BaseContent.h"
 #include "ContentManager.h"
+#include "NColor.h"
 
 class ImageContent : public BaseContent
 {
@@ -17,6 +18,9 @@ public:
 
 	void Initialize();
 	bool Load(const std::string path);
+
+	void SetPixel(int x, int y, NColor color);
+	NColor GetPixel(int x, int y);
 private:
 	std::vector<unsigned char> imageData;
 	int width;

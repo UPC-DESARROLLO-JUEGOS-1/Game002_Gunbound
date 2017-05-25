@@ -14,6 +14,23 @@ void GWorld::Initialize(float x, float y, std::string path) {
 
 	mSprite.Initialize(0, 0, path);
 	mSprite.SetRenderCamera(GameFramework::GET_FRAMEWORK()->GetCamera());
+	ImageContent* imageContent = mSprite.GetImageContent();
+
+	NColor color;
+	color.r = 255;
+	color.g = 255;
+	color.b = 255;
+	color.a = 0;
+
+	for (int w = 0; w < 20; w++)
+	{
+		for (int h = 0; h < 20; h++)
+		{
+			imageContent->SetPixel(240 + w, 240 + h, color);
+		}
+	}
+
+	
 
 	mLogicCamera = GunboundGameApp::GET_GAMEAPP()->
 		GetEngine()->GetLogicCamera();

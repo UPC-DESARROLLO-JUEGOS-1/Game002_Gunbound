@@ -168,6 +168,9 @@
     <ClInclude Include="MathUtils.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
+    <ClInclude Include="NColor.h">
+      <Filter>Header Files\core\render\graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameWindow.cpp">

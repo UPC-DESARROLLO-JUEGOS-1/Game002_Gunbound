@@ -21,6 +21,7 @@ public:
 	int GetHeight() { return height; }
 	int GetVisibleWidth() { return width*scale.x; }
 	int GetVisibleHeight() { return height*scale.y; }
+	ImageContent* GetImageContent() { return content; }
 
 	void Initialize(float x, float y, const std::string path);
 	void Update(float dt);

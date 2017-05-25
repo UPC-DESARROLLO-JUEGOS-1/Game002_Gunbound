@@ -153,6 +153,7 @@
     <ClInclude Include="ImageContent.h" />
     <ClInclude Include="MathUtils.h" />
     <ClInclude Include="MultiTexturedSprite2D.h" />
+    <ClInclude Include="NColor.h" />
     <ClInclude Include="PicoPNG.h" />
     <ClInclude Include="SceneGraph.h" />
     <ClInclude Include="ShaderManager.h" />
