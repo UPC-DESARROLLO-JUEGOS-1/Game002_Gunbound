@@ -2,6 +2,7 @@
 
 #include "GPlayer.h"
 #include "GLogicCamera.h"
+#include "GWorld.h"
 
 #include <SDL\SDL.h>
 
@@ -11,6 +12,7 @@ public:
 	GEngine();
 	~GEngine();
 
+	GWorld* GetWorld() { return mWorld; }
 	GPlayer* GetPlayer() { return mPlayer; }
 	GLogicCamera* GetLogicCamera() { return mLogicCamera; }
 
@@ -22,6 +24,7 @@ public:
 
 private:
 	GPlayer* mPlayer;
+	GWorld* mWorld;
 	GLogicCamera* mLogicCamera;
 };
 

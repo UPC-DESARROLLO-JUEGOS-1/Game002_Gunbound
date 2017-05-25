@@ -11,9 +11,6 @@ void GameScene::Initialize()
 
 	mGGApp = new GunboundGameApp();
 	mGGApp->Initialize();
-
-	mPlayer = new GPlayer();
-	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
 }
 
 void GameScene::OnKeyDown(SDL_Keycode key)
@@ -29,11 +26,9 @@ void GameScene::OnKeyUp(SDL_Keycode key)
 void GameScene::Update(float dt)
 {
 	mGGApp->Update(dt);
-	mPlayer->Update(dt);
 }
 
 void GameScene::Draw(float dt)
 {
 	mGGApp->Draw(dt);
-	mPlayer->Draw(dt);
 }

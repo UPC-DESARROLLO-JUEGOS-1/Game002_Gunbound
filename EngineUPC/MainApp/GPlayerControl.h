@@ -2,10 +2,12 @@
 
 #include <SDL\SDL.h>
 
+class GPlayer;
+
 class GPlayerControl
 {
 public:
-	GPlayerControl();
+	GPlayerControl(GPlayer* player);
 	~GPlayerControl();
 
 	void OnKeyDown(SDL_Keycode key);
@@ -15,9 +17,12 @@ public:
 	void Update(float dt);
 
 private:
+
 	bool mIsRight, mIsLeft, mIsUp, mIsDown, mIsSpacePressed;
 	bool mChargingShot;
 	bool mAlreadyShot;
 	float mCurrentCharge;
+
+	GPlayer* mPlayer;
 };
 

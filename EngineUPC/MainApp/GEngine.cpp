@@ -1,4 +1,6 @@
 #include "GEngine.h"
+#include "GameApp.h"
+
 #include <string>
 
 GEngine::GEngine()
@@ -13,11 +15,14 @@ void GEngine::Initialize() {
 	mLogicCamera = new GLogicCamera();
 	mLogicCamera->Initialize();
 
-	mPlayer = new GPlayer();
-	mPlayer->Initialize(100, 200, "");
+	mPlayer = new GPlayer(this);
+	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
+
+	mWorld = new GWorld();
+	mWorld->Initialize("Sprites/player.png");
 
 	// After All
-	//mLogicCamera->SetCurrentTarget(mPlayer);
+	mLogicCamera->SetCurrentTarget(mPlayer);
 }
 
 void GEngine::OnKeyDown(SDL_Keycode key)
@@ -33,8 +38,10 @@ void GEngine::OnKeyUp(SDL_Keycode key)
 void GEngine::Update(float dt) {
 	mLogicCamera->Update(dt);
 	mPlayer->Update(dt);
+	mWorld->Update(dt);
 }
 
 void GEngine::Draw(float dt) {
+	mWorld->Draw(dt);
 	mPlayer->Draw(dt);
 }

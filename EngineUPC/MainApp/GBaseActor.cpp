@@ -1,9 +1,12 @@
 #include "GBaseActor.h"
 #include "GunboundGameApp.h"
+#include "GEngine.h"
+
 #include <FrameworkUPC\GameFramework.h>
 
-GBaseActor::GBaseActor()
+GBaseActor::GBaseActor(GEngine* engine)
 {
+	mEngine = engine;
 }
 
 GBaseActor::~GBaseActor()
@@ -26,8 +29,9 @@ void GBaseActor::Update(float dt) {
 
 	mSprite.SetX(sx);
 	mSprite.SetY(sy);
+	mSprite.Update(dt);
 }
 
 void GBaseActor::Draw(float dt) {
-
+	mSprite.Draw(dt);
 }
