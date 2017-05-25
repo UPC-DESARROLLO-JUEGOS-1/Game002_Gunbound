@@ -2,6 +2,7 @@
 
 #include <FrameworkUPC\BaseScene.h>
 #include "GunboundGameApp.h"
+#include "GPlayer.h"
 
 class GameScene : public BaseScene
 {
@@ -23,4 +24,5 @@ public:
 
 private:
 	GunboundGameApp* mGGApp;
+	GPlayer* mPlayer;
 };

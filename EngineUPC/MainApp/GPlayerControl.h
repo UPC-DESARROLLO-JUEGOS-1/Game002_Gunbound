@@ -13,5 +13,11 @@ public:
 
 	void Initialize();
 	void Update(float dt);
+
+private:
+	bool mIsRight, mIsLeft, mIsUp, mIsDown, mIsSpacePressed;
+	bool mChargingShot;
+	bool mAlreadyShot;
+	float mCurrentCharge;
 };
 
