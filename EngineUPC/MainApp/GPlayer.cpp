@@ -30,6 +30,12 @@ void GPlayer::Initialize(float x, float y, std::string path) {
 
 void GPlayer::Update(float dt) {
 	mPlayerControl->Update(dt);
+
+	float limitRight = mEngine->GetWorld()->GetWidth() - mSprite.GetVisibleWidth();
+
+	if (mX < 0) { mX = 0; }
+	if (mX > limitRight) { mX = limitRight; }
+
 	mCannon.Update(dt);
 	GBaseActor::Update(dt);
 }

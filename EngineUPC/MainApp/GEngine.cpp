@@ -12,16 +12,15 @@ GEngine::~GEngine()
 }
 
 void GEngine::Initialize() {
-	mLogicCamera = new GLogicCamera();
-	mLogicCamera->Initialize();
-
+	mLogicCamera = new GLogicCamera(this);
 	mPlayer = new GPlayer(this);
-	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
-
 	mWorld = new GWorld();
-	mWorld->Initialize(0, 0, "Sprites/world.png");
-
 	mProjectileManager = new GProjectileManager();
+	
+
+	mLogicCamera->Initialize();
+	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
+	mWorld->Initialize(0, 0, "Sprites/world.png");
 	mProjectileManager->Initialize();
 
 	// After All
