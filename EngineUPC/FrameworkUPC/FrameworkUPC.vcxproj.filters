@@ -165,7 +165,7 @@
     <ClInclude Include="EnumWindowFlags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="RandomGenerator.h">
+    <ClInclude Include="MathUtils.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
   </ItemGroup>

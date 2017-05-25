@@ -151,9 +151,9 @@
     <ClInclude Include="GameFramework.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="ImageContent.h" />
+    <ClInclude Include="MathUtils.h" />
     <ClInclude Include="MultiTexturedSprite2D.h" />
     <ClInclude Include="PicoPNG.h" />
-    <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="SceneGraph.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="Sprite.h" />

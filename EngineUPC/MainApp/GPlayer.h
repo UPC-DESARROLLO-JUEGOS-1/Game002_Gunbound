@@ -22,5 +22,6 @@ public:
 private:
 	GEngine* mEngine;
 	GPlayerControl* mPlayerControl;
+	Sprite mCannon;
 };
 
