@@ -19,7 +19,7 @@ void GEngine::Initialize() {
 	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
 
 	mWorld = new GWorld();
-	mWorld->Initialize("Sprites/player.png");
+	mWorld->Initialize("Sprites/world.png");
 
 	// After All
 	mLogicCamera->SetCurrentTarget(mPlayer);
