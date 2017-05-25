@@ -19,10 +19,26 @@ void GEngine::Initialize() {
 	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
 
 	mWorld = new GWorld();
-	mWorld->Initialize(0, 0, "Sprites/world.png");
+	mWorld->Initialize("Sprites/player.png");
+
+	mProjectileManager = new GProjectileManager();
+	mProjectileManager->Initialize();
 
 	// After All
 	mLogicCamera->SetCurrentTarget(mPlayer);
+}
+
+void GEngine::Update(float dt) {
+	mLogicCamera->Update(dt);
+	mWorld->Update(dt);
+	mPlayer->Update(dt);
+	mProjectileManager->Update(dt);
+}
+
+void GEngine::Draw(float dt) {
+	mWorld->Draw(dt);
+	mPlayer->Draw(dt);
+	mProjectileManager->Draw(dt);
 }
 
 void GEngine::OnKeyDown(SDL_Keycode key)
@@ -35,13 +51,8 @@ void GEngine::OnKeyUp(SDL_Keycode key)
 	mPlayer->GetControl()->OnKeyUp(key);
 }
 
-void GEngine::Update(float dt) {
-	mLogicCamera->Update(dt);
-	mPlayer->Update(dt);
-	mWorld->Update(dt);
+void GEngine::OnPlayerShot(GBaseProjectile * newProjectile)
+{
+	mProjectileManager->CreateProjectile(newProjectile);
 }
 
-void GEngine::Draw(float dt) {
-	mWorld->Draw(dt);
-	mPlayer->Draw(dt);
-}

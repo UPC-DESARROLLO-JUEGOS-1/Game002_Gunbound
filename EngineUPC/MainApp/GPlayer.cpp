@@ -17,7 +17,7 @@ GPlayer::~GPlayer()
 void GPlayer::Initialize(float x, float y, std::string path) {
 	GBaseActor::Initialize(x, y, path);
 
-	mSprite.SetY(mSprite.GetPosition().y - mSprite.GetHeight() - 30);
+	mY -= mSprite.GetHeight() - 30;
 
 	mCannon.Initialize(mSprite.GetPosition().x + mSprite.GetVisibleWidth()*0.7f, mSprite.GetPosition().y, "Sprites/cannon.png");
 	mCannon.SetRenderCamera(GameFramework::GET_FRAMEWORK()->GetCamera());
@@ -30,11 +30,20 @@ void GPlayer::Initialize(float x, float y, std::string path) {
 
 void GPlayer::Update(float dt) {
 	mPlayerControl->Update(dt);
-	mSprite.Update(dt);
 	mCannon.Update(dt);
+	GBaseActor::Update(dt);
 }
 
 void GPlayer::Draw(float dt) {
-	mSprite.Draw(dt);
+	GBaseActor::Draw(dt);
 	mCannon.Draw(dt);
+}
+
+void GPlayer::Shoot(float angle, float strength)
+{
+	GBaseProjectile* newProjectile = new GBaseProjectile(mEngine);
+	Vector2 pos = mSprite.GetPosition();
+	newProjectile->Initialize(pos.x + mSprite.GetWidth()*0.5f, pos.y + mSprite.GetHeight()*0.5f, angle, strength);
+
+	mEngine->OnPlayerShot(newProjectile);
 }

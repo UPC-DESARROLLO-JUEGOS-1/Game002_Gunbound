@@ -1,6 +1,7 @@
 #pragma once
 
 #include <FrameworkUPC\Sprite.h>
+#include "GWorldForces.h"
 
 class GLogicCamera;
 
@@ -28,6 +29,7 @@ private:
 	int mWorldHeight;
 	Sprite mSprite;
 	GLogicCamera* mLogicCamera;
+	GWorldForces* mWorldForces;
 
 	bool InsideArea(int x, int y);
 };

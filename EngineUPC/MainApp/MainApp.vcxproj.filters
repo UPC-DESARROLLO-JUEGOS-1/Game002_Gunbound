@@ -78,9 +78,6 @@
     <ClCompile Include="GameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GBaseBullet.cpp">
-      <Filter>Source Files\Game\Engine\actors</Filter>
-    </ClCompile>
     <ClCompile Include="GPlayer.cpp">
       <Filter>Source Files\Game\Engine\actors\player</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     </ClCompile>
     <ClCompile Include="GLogicCamera.cpp">
       <Filter>Source Files\Game\Engine\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GBulletManager.cpp">
-      <Filter>Source Files\Game\Engine\managers</Filter>
     </ClCompile>
     <ClCompile Include="GTurnManager.cpp">
       <Filter>Source Files\Game\Engine\managers</Filter>
@@ -114,6 +108,15 @@
     <ClCompile Include="GBaseActor.cpp">
       <Filter>Source Files\Game\Engine\actors</Filter>
     </ClCompile>
+    <ClCompile Include="GProjectileManager.cpp">
+      <Filter>Source Files\Game\Engine\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="GBaseProjectile.cpp">
+      <Filter>Source Files\Game\Engine\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GWorldForces.cpp">
+      <Filter>Source Files\Game\Engine\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h">
@@ -124,9 +127,6 @@
     </ClInclude>
     <ClInclude Include="GameApp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GBaseBullet.h">
-      <Filter>Header Files\Game\Engine\actors</Filter>
     </ClInclude>
     <ClInclude Include="GPlayer.h">
       <Filter>Header Files\Game\Engine\actors\player</Filter>
@@ -142,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="GLogicCamera.h">
       <Filter>Header Files\Game\Engine\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="GBulletManager.h">
-      <Filter>Header Files\Game\Engine\managers</Filter>
     </ClInclude>
     <ClInclude Include="GTurnManager.h">
       <Filter>Header Files\Game\Engine\managers</Filter>
@@ -163,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="EnumAppScenes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GBaseProjectile.h">
+      <Filter>Header Files\Game\Engine\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="GProjectileManager.h">
+      <Filter>Header Files\Game\Engine\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GWorldForces.h">
+      <Filter>Header Files\Game\Engine\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
