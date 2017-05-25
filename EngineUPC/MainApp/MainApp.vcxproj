@@ -145,7 +145,6 @@
     <ClCompile Include="GLogicCamera.cpp" />
     <ClCompile Include="GEngine.cpp" />
     <ClCompile Include="GPlayer.cpp" />
-    <ClCompile Include="GPlayerBullet.cpp" />
     <ClCompile Include="GPlayerControl.cpp" />
     <ClCompile Include="GProjectileManager.cpp" />
     <ClCompile Include="GTurnManager.cpp" />
@@ -165,7 +164,6 @@
     <ClInclude Include="GLogicCamera.h" />
     <ClInclude Include="GEngine.h" />
     <ClInclude Include="GPlayer.h" />
-    <ClInclude Include="GPlayerBullet.h" />
     <ClInclude Include="GPlayerControl.h" />
     <ClInclude Include="GProjectileManager.h" />
     <ClInclude Include="GTurnManager.h" />

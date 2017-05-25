@@ -2,6 +2,7 @@
 
 #include <SDL\SDL.h>
 #include "GEngine.h"
+#include "GHud.h"
 
 class GunboundGameApp
 {
@@ -9,9 +10,14 @@ public:
 	static GunboundGameApp* GET_GAMEAPP();
 
 	GunboundGameApp();
-	~GunboundGameApp();
+	~GunboundGameApp()
+	{
+		delete mEngine;
+		delete mHud;
+	}
 
 	GEngine* GetEngine() { return mEngine; }
+	GHud* GetHud() { return mHud; }
 
 	void Initialize();
 	void Update(float dt);
@@ -24,4 +30,5 @@ private:
 	static GunboundGameApp* GAMEAPP;
 
 	GEngine* mEngine;
+	GHud* mHud;
 };

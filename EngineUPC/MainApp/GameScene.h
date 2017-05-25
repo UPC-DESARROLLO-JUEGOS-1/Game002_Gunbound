@@ -11,7 +11,7 @@ public:
 	{}
 	~GameScene()
 	{
-
+		delete mGGApp;
 	}
 
 	void Initialize();

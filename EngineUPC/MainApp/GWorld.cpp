@@ -8,10 +8,6 @@ GWorld::GWorld() :
 {
 }
 
-GWorld::~GWorld()
-{
-}
-
 void GWorld::Initialize(float x, float y, std::string path) {
 	mX = x;
 	mY = y;
@@ -21,6 +17,8 @@ void GWorld::Initialize(float x, float y, std::string path) {
 
 	mLogicCamera = GunboundGameApp::GET_GAMEAPP()->
 		GetEngine()->GetLogicCamera();
+
+	mWorldForces = new GWorldForces();
 
 	mWorldWidth = mSprite.GetWidth();
 	mWorldHeight = mSprite.GetHeight();
@@ -55,7 +53,7 @@ void GWorld::Update(float dt) {
 	float sx = mX - mLogicCamera->GetX();
 	float sy = mY - mLogicCamera->GetY();
 
-	sx = sx < 0 ? 0 : sx;
+	//sx = sx < 0 ? 0 : sx;
 	sy = sy < 0 ? 0 : sy;
 
 	sy += mOffsetY;

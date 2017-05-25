@@ -2,6 +2,7 @@
 
 #include <SDL\SDL.h>
 #include <FrameworkUPC\Sprite.h>
+#include <FrameworkUPC\Quad.h>
 
 class GPlayer;
 
@@ -33,6 +34,7 @@ private:
 	GPlayer* mPlayer;
 	Sprite* mPlayerBody;
 	Sprite* mCannonBody;
+	Quad* mStrengthChargeBar;
 
 	void ChargeShot();
 	void Shoot();

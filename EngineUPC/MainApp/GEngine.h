@@ -10,8 +10,14 @@
 class GEngine
 {
 public:
-	GEngine();
-	~GEngine();
+	GEngine() {}
+	~GEngine()
+	{
+		delete mPlayer;
+		delete mWorld;
+		delete mLogicCamera;
+		delete mProjectileManager;
+	}
 
 	GWorld* GetWorld() { return mWorld; }
 	GPlayer* GetPlayer() { return mPlayer; }

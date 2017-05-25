@@ -3,14 +3,6 @@
 
 #include <string>
 
-GEngine::GEngine()
-{
-}
-
-GEngine::~GEngine()
-{
-}
-
 void GEngine::Initialize() {
 	mLogicCamera = new GLogicCamera();
 	mLogicCamera->Initialize();

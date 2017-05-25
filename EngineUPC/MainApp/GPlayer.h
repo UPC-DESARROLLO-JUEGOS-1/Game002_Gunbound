@@ -11,7 +11,10 @@ class GPlayer : public GBaseActor
 {
 public:
 	GPlayer(GEngine* engine);
-	~GPlayer();
+	~GPlayer()
+	{
+		delete mPlayerControl;
+	}
 
 	GPlayerControl* GetControl() { return mPlayerControl; }
 
