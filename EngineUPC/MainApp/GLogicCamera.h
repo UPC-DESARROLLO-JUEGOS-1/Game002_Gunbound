@@ -10,6 +10,8 @@ public:
 
 	float inline GetX() { return mX; }
 	float inline GetY() { return mY; }
+	float inline GetWidth() { return mWidth; }
+	float inline GetHeight() { return mHeight; }
 	GBaseActor* GetCurrentTarget() { return mCurrentTarget; }
 
 	void Initialize();
@@ -22,5 +24,9 @@ public:
 private:
 	float mX;
 	float mY;
+	float mWidth;
+	float mHeight;
+	float mHWidth;
+	float mHHeight;
 	GBaseActor* mCurrentTarget;
 };

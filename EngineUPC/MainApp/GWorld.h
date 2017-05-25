@@ -14,7 +14,7 @@ public:
 	int inline GetWidth() { return mWorldWidth; }
 	int inline GetHeight() { return mWorldHeight; }
 
-	void Initialize(std::string path);
+	void Initialize(float x, float y, std::string path);
 	bool ExistsTerrainIn(int x, int y);
 	void ExplodeTerrainIn(int x, int y, int radio);
 
@@ -24,6 +24,7 @@ public:
 private:
 	int mX;
 	int mY;
+	int mOffsetY;
 	int mWorldWidth;
 	int mWorldHeight;
 	Sprite mSprite;
