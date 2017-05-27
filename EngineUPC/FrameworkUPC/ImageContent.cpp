@@ -1,7 +1,8 @@
 #include "ImageContent.h"
 #include "PicoPNG.h"
 
-ImageContent::ImageContent(ContentManager* contentManager) : BaseContent(contentManager)
+ImageContent::ImageContent(ContentManager* contentManager) 
+	: BaseContent(contentManager)
 {
 }
 
@@ -12,23 +13,47 @@ void ImageContent::Initialize()
 	BaseContent::Initialize(); //super (call parent´s version)
 }
 
-void ImageContent::SetPixel(int x, int y, NColor color) {
-	imageData.at(x + (y * width) + 0) = color.r;
-	imageData.at(x + (y * width) + 1) = color.g;
-	imageData.at(x + (y * width) + 2) = color.b;
-	imageData.at(x + (y * width) + 3) = color.a;
-
+void ImageContent::Invalidate() {
 	glBindTexture(GL_TEXTURE_2D, imageId);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &imageData[0]);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+void ImageContent::SetPixelAlpha(int x, int y, unsigned char alpha, bool invalidate) {
+	int startIndex = (x + (y * width)) * 4;
+
+	imageData.at(startIndex + 3) = alpha;
+
+	if (invalidate) {
+		glBindTexture(GL_TEXTURE_2D, imageId);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &imageData[0]);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+}
+
+void ImageContent::SetPixel(int x, int y, NColor color, bool invalidate) {
+	int startIndex = (x + (y * width)) * 4;
+
+	imageData.at(startIndex + 0) = color.r;
+	imageData.at(startIndex + 1) = color.g;
+	imageData.at(startIndex + 2) = color.b;
+	imageData.at(startIndex + 3) = color.a;
+
+	if (invalidate) {
+		glBindTexture(GL_TEXTURE_2D, imageId);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &imageData[0]);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+}
+
 NColor ImageContent::GetPixel(int x, int y) {
+	int startIndex = (x + (y * width)) * 4;
+
 	NColor result;
-	result.r = imageData.at(x + (y * width) + 0);
-	result.g = imageData.at(x + (y * width) + 1);
-	result.b = imageData.at(x + (y * width) + 2);
-	result.a = imageData.at(x + (y * width) + 3);
+	result.r = imageData.at(startIndex + 0);
+	result.g = imageData.at(startIndex + 1);
+	result.b = imageData.at(startIndex + 2);
+	result.a = imageData.at(startIndex + 3);
 
 	return result;
 }

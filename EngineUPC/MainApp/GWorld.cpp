@@ -14,23 +14,6 @@ void GWorld::Initialize(float x, float y, std::string path) {
 
 	mSprite.Initialize(0, 0, path);
 	mSprite.SetRenderCamera(GameFramework::GET_FRAMEWORK()->GetCamera());
-	ImageContent* imageContent = mSprite.GetImageContent();
-
-	NColor color;
-	color.r = 255;
-	color.g = 255;
-	color.b = 255;
-	color.a = 0;
-
-	for (int w = 0; w < 20; w++)
-	{
-		for (int h = 0; h < 20; h++)
-		{
-			imageContent->SetPixel(240 + w, 240 + h, color);
-		}
-	}
-
-	
 
 	mLogicCamera = GunboundGameApp::GET_GAMEAPP()->
 		GetEngine()->GetLogicCamera();
@@ -40,23 +23,48 @@ void GWorld::Initialize(float x, float y, std::string path) {
 	mWorldWidth = mSprite.GetWidth();
 	mWorldHeight = mSprite.GetHeight();
 	mOffsetY = mLogicCamera->GetHeight() - mWorldHeight;
+
+	ExplodeTerrainIn(200, 400, 120);
 }
 
 bool GWorld::ExistsTerrainIn(int x, int y) {
 	bool inArea = InsideArea(x, y);
+	bool result = false;
 
 	if (inArea) {
-		// TODO
+		ImageContent* imageContent = mSprite.GetImageContent();
+		NColor color = imageContent->GetPixel(x, y);
+
+		result = ((int)color.a) > 0;
 	}
 
-	return false;
+	return result;
 }
 
-void GWorld::ExplodeTerrainIn(int x, int y, int radio) {
+void GWorld::ExplodeTerrainIn(int x, int y, int radius) {
 	bool inArea = InsideArea(x, y);
 
 	if (inArea) {
-		// TODO
+		ImageContent* imageContent = mSprite.GetImageContent();
+
+		int dRadius = radius * radius;
+		int sizeX = x + radius;
+		int sizeY = y + radius;
+
+		for (int i = x - radius; i < sizeX; i++) {
+			for (int j = y - radius; j < sizeY; j++) {
+				
+				float dx = i - x;
+				float dy = j - y;
+				int d = dx * dx + dy* dy;
+
+				if (d < dRadius) {
+					imageContent->SetPixelAlpha(i, j, 0, false);
+				}	
+			}
+		}
+
+		imageContent->Invalidate();
 	}
 }
 

@@ -19,7 +19,9 @@ public:
 	void Initialize();
 	bool Load(const std::string path);
 
-	void SetPixel(int x, int y, NColor color);
+	void Invalidate();
+	void SetPixel(int x, int y, NColor color, bool invalidate = true);
+	void SetPixelAlpha(int x, int y, unsigned char alpha, bool invalidate);
 	NColor GetPixel(int x, int y);
 private:
 	std::vector<unsigned char> imageData;
