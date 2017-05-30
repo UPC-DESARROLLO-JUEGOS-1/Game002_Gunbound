@@ -79,7 +79,7 @@ void GWorld::Update(float dt) {
 	float sy = mY - mLogicCamera->GetY();
 	float limitLeftX = -(mWorldWidth - mLogicCamera->GetWidth());
 
-	sx = sx < limitLeftX ? limitLeftX : sx;
+	//sx = sx < limitLeftX ? limitLeftX : sx;
 	//sx = sx < 0 ? 0 : sx;
 	sy = sy < 0 ? 0 : sy;
 

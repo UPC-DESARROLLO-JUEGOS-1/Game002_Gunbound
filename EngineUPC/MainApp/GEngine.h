@@ -4,6 +4,7 @@
 #include "GLogicCamera.h"
 #include "GWorld.h"
 #include "GProjectileManager.h"
+#include "GTurnManager.h"
 
 #include <SDL\SDL.h>
 
@@ -14,6 +15,7 @@ public:
 	~GEngine()
 	{
 		delete mPlayer;
+		delete mPlayer2;
 		delete mWorld;
 		delete mLogicCamera;
 		delete mProjectileManager;
@@ -21,6 +23,7 @@ public:
 
 	GWorld* GetWorld() { return mWorld; }
 	GPlayer* GetPlayer() { return mPlayer; }
+	GPlayer* GetPlayer2() { return mPlayer2; }
 	GLogicCamera* GetLogicCamera() { return mLogicCamera; }
 
 	void Initialize();
@@ -34,8 +37,10 @@ public:
 
 private:
 	GPlayer* mPlayer;
+	GPlayer* mPlayer2;
 	GWorld* mWorld;
 	GLogicCamera* mLogicCamera;
 	GProjectileManager* mProjectileManager;
+	GTurnManager* mTurnManager;
 };
 

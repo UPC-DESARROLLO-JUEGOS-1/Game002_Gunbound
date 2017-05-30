@@ -27,9 +27,13 @@ void GLogicCamera::Update(float dt) {
 		float ww = mWorld->GetWidth();
 		float limitRightX = ww - mHWidth;
 
-		if (cx > mHWidth) { mX = cx - mHWidth; }
-		if (cx > limitRightX) { mX = cx - (mHWidth + (cx - limitRightX)); }
 
-		if (cy > mHHeight) { mY = cy - mHHeight; }
+		mX = cx - mHWidth;
+		mY = cy - mHHeight;
+		//if (cx > mHWidth) { mX = cx - mHWidth; }
+		if (cx < mHWidth) { mX = 0; }
+		else if (cx > limitRightX) { mX = cx - (mHWidth + (cx - limitRightX)); }
+
+		//if (cy > mHHeight) { mY = cy - mHHeight; }
 	}
 }
