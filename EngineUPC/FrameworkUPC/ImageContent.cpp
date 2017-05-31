@@ -22,7 +22,7 @@ void ImageContent::Invalidate() {
 void ImageContent::SetPixelAlpha(int x, int y, unsigned char alpha, bool invalidate) {
 	int startIndex = (x + (y * width)) * 4;
 
-	imageData.at(startIndex + 3) = alpha;
+ 	imageData.at(startIndex + 3) = alpha;
 
 	if (invalidate) {
 		glBindTexture(GL_TEXTURE_2D, imageId);

@@ -2,13 +2,13 @@
 
 #include <vector>
 #include "GBaseProjectile.h"
-
+#include <GWorld.h>
 class GameScene;
 
 class GProjectileManager
 {
 public:
-	GProjectileManager() {}
+	GProjectileManager(GEngine* engine) { mEngine = engine; }
 	~GProjectileManager()
 	{
 		for each (GBaseProjectile* projectile in mProjectileGroup) { delete projectile; }
@@ -23,5 +23,7 @@ public:
 
 private:
 	std::vector<GBaseProjectile*> mProjectileGroup;
+	GEngine * mEngine;
+	GWorld * mWorld;
 };
 

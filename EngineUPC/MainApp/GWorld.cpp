@@ -3,9 +3,10 @@
 #include "GunboundGameApp.h"
 #include <FrameworkUPC\GameFramework.h>
 
-GWorld::GWorld() :
+GWorld::GWorld(GEngine* engine) :
 	mX(0), mY(0), mWorldWidth(0), mWorldHeight(0)
 {
+	mEngine = engine;
 }
 
 void GWorld::Initialize(float x, float y, std::string path) {
@@ -39,6 +40,13 @@ bool GWorld::ExistsTerrainIn(int x, int y) {
 	}
 
 	return result;
+}
+Vector2 GWorld::ConvertToWorldTextureCoordinates(int x, int y)
+{
+	int tX = x - mX;
+	int tY = y - mY - mOffsetY;
+
+	return Vector2(tX, tY);
 }
 
 void GWorld::ExplodeTerrainIn(int x, int y, int radius) {
