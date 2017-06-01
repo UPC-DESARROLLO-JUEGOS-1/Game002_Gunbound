@@ -43,8 +43,8 @@ void GPlayer::Draw(float dt) {
 
 void GPlayer::Shoot(float angle, float strength)
 {
-	GBaseProjectile* newProjectile = new GBaseProjectile(mEngine);
-	newProjectile->Initialize(mX + mSprite.GetWidth()*0.5f, mY + mSprite.GetHeight()*0.5f, angle, strength);
+	float px = mX + mSprite.GetWidth()*0.5f;
+	float py = mY + mSprite.GetHeight()*0.5f;
 
-	mEngine->OnPlayerShot(newProjectile);
+	mEngine->GetProjectileManager()->CreateProjectile(px, py, angle, strength);
 }

@@ -131,5 +131,6 @@ void GPlayerControl::Shoot()
 	mChargingShot = false;
 	if (mIsSpacePressed) mAlreadyShot = true;
 
-	mPlayer->Shoot(-M_PI*0.5f+ mDirection*(M_PI*0.5f-abs(mCurrentAngle)), mMaxStrength*mCurrentCharge);
+	mPlayer->Shoot(-M_PI*0.5f+ mDirection*(M_PI*0.5f-abs(mCurrentAngle)), 
+		mMaxStrength*mCurrentCharge);
 }

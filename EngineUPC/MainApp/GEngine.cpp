@@ -48,9 +48,3 @@ void GEngine::OnKeyUp(SDL_Keycode key)
 {
 	mTurnManager->OnKeyUp(key);
 }
-
-void GEngine::OnPlayerShot(GBaseProjectile * newProjectile)
-{
-	mProjectileManager->CreateProjectile(newProjectile);
-}
-

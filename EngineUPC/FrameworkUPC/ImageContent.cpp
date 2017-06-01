@@ -22,6 +22,8 @@ void ImageContent::Invalidate() {
 void ImageContent::SetPixelAlpha(int x, int y, unsigned char alpha, bool invalidate) {
 	int startIndex = (x + (y * width)) * 4;
 
+	if (x < 0 || x > (width - 1) || y < 0 || y > (height - 1)) return;
+
  	imageData.at(startIndex + 3) = alpha;
 
 	if (invalidate) {
