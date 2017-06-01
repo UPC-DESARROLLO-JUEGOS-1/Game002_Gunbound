@@ -8,6 +8,7 @@ GPlayerControl::GPlayerControl(GPlayer* player) :
 	mIsUp(false), mIsDown(false),
 	mIsSpacePressed(false),
 	mMoveSpeed(600),
+	mDirection(1),
 	mCurrentAngle(-M_PI*0.25),
 	mAngleChangeSpeed(M_PI*0.25),
 	mMaxStrength(1200),
@@ -97,16 +98,20 @@ void GPlayerControl::Update(float dt)
 	}
 
 	float currentSpeed = 0;
-	if (mIsLeft) currentSpeed -= mMoveSpeed;
-	if (mIsRight) currentSpeed += mMoveSpeed;
+
+	if (mIsLeft) { currentSpeed -= mMoveSpeed; mDirection = -1; }
+	if (mIsRight) { currentSpeed += mMoveSpeed; mDirection = 1; }
 	mPlayer->Translate(currentSpeed*dt, 0);
+
+	mPlayerBody->SetScaleX(mDirection);
+	mCannonBody->SetScaleX(mDirection);
 
 	if (mIsUp) mCurrentAngle -= mAngleChangeSpeed*dt;
 	if (mIsDown) mCurrentAngle += mAngleChangeSpeed*dt;
 	mCurrentAngle = MathUtils::Clamp(mCurrentAngle, -M_PI*0.5f, 0);
 
 	Vector2 pos = mPlayerBody->GetPosition();
-	mCannonBody->SetX(pos.x + mPlayerBody->GetVisibleWidth()*0.6f);
+	mCannonBody->SetX(pos.x + mPlayerBody->GetVisibleWidth()*0.5f + mDirection*mPlayerBody->GetVisibleWidth()*0.1);
 	mCannonBody->SetY(pos.y - 6);
 	mCannonBody->SetRotationZ(mCurrentAngle + M_PI*0.25f);
 }
@@ -126,5 +131,5 @@ void GPlayerControl::Shoot()
 	mChargingShot = false;
 	if (mIsSpacePressed) mAlreadyShot = true;
 
-	mPlayer->Shoot(mCurrentAngle, mMaxStrength*mCurrentCharge);
+	mPlayer->Shoot(-M_PI*0.5f+ mDirection*(M_PI*0.5f-abs(mCurrentAngle)), mMaxStrength*mCurrentCharge);
 }

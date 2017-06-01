@@ -10,8 +10,8 @@ public:
 
 	int GetWidth() { return width; }
 	int GetHeight() { return height; }
-	int GetVisibleWidth() { return width*scale.x; }
-	int GetVisibleHeight() { return height*scale.y; }
+	int GetVisibleWidth() { return width*abs(scale.x); }
+	int GetVisibleHeight() { return height*abs(scale.y); }
 
 	void Initialize(float x, float y, int width, int height);
 	void Update(float dt);
