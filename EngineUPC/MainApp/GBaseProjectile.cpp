@@ -1,12 +1,29 @@
 #include "GBaseProjectile.h"
 #include "GWorldForces.h"
+#include "GEngine.h"
+#include "GWorld.h"
+#include "GLogicCamera.h"
 
 #include <FrameworkUPC\GameFramework.h>
 #include <math.h>
 
+GBaseProjectile::GBaseProjectile(GEngine* engine) : GBaseActor::GBaseActor(engine),
+	mTimeParameter(0.0f),
+	mPower(30), // By default 30 radius explosion
+	mPosition0(0, 0),
+	mSpeed0(0, 0),
+	mGravity(0, 0),
+	mWind(0, 0) {
+
+	mEngine = engine;
+}
+
 void GBaseProjectile::Initialize(float x, float y, float angle, float strength)
 {
 	GBaseActor::Initialize(x, y, "Sprites/bullet.png");
+
+	mWorld = mEngine->GetWorld();
+	mLogicCamera = mEngine->GetLogicCamera();
 
 	//Position
 	Vector2 pos = mSprite.GetPosition();
@@ -32,6 +49,16 @@ void GBaseProjectile::Update(float dt)
 	mX = mPosition0.x + (mSpeed0.x + mWind.x*mTimeParameter)*mTimeParameter*0.5f;
 	mY = mPosition0.y + (mSpeed0.y + (mWind.y + mGravity.y)*mTimeParameter)*mTimeParameter*0.5f;
 	
+	Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates(mX, mY);
+	//textureCoordinates.x -= camera->GetX();
+	//textureCoordinates.y -= mLogicCamera->GetY();
+
+	if (mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
+	{
+		mWorld->ExplodeTerrainIn(textureCoordinates.x, textureCoordinates.y, mPower);
+		this->KillObject();
+	}
+
 	GBaseActor::Update(dt);
 }
 
@@ -40,4 +67,9 @@ void GBaseProjectile::Draw(float dt)
 	if (!objectAlive) return;
 
 	GBaseActor::Draw(dt);
+}
+
+
+GBaseProjectile::~GBaseProjectile() {
+	GBaseActor::~GBaseActor();
 }
