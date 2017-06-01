@@ -108,11 +108,11 @@
     <ClCompile Include="GProjectileManager.cpp">
       <Filter>Source Files\Game\Engine\managers</Filter>
     </ClCompile>
-    <ClCompile Include="GBaseProjectile.cpp">
-      <Filter>Source Files\Game\Engine\actors</Filter>
-    </ClCompile>
     <ClCompile Include="GWorldForces.cpp">
       <Filter>Source Files\Game\Engine\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GBaseProjectile.cpp">
+      <Filter>Source Files\Game\Engine\actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -155,14 +155,14 @@
     <ClInclude Include="EnumAppScenes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GBaseProjectile.h">
-      <Filter>Header Files\Game\Engine\actors</Filter>
-    </ClInclude>
     <ClInclude Include="GProjectileManager.h">
       <Filter>Header Files\Game\Engine\managers</Filter>
     </ClInclude>
     <ClInclude Include="GWorldForces.h">
       <Filter>Header Files\Game\Engine\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GBaseProjectile.h">
+      <Filter>Header Files\Game\Engine\actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -17,6 +17,9 @@ public:
 	float inline SetX(float x) { mX = x; }
 	float inline SetY(float y) { mY = y; }
 
+	float inline GetRotation() { return mSprite.GetRotationZ(); }
+	void inline SetRotation(float value) { mSprite.SetRotationZ(value); }
+
 	void Initialize(float x, float y, std::string path);
 	void Update(float dt);
 	void Draw(float dt);

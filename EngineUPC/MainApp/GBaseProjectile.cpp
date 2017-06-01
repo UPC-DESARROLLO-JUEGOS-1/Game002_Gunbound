@@ -46,11 +46,20 @@ void GBaseProjectile::Update(float dt)
 
 	mTimeParameter += dt;
 
+	float oldX = mX;
+	float oldY = mY;
+
 	mX = mPosition0.x + (mSpeed0.x + mWind.x*mTimeParameter)*mTimeParameter*0.5f;
 	mY = mPosition0.y + (mSpeed0.y + (mWind.y + mGravity.y)*mTimeParameter)*mTimeParameter*0.5f;
 	
+	float dx = mX - oldX;
+	float dy = mY - oldY;
+	float angle = atan2f(dy, dx) + 1.57f;
+
+	SetRotation(angle);
+
 	Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates(mX, mY);
-	//textureCoordinates.x -= camera->GetX();
+	//textureCoordinates.x -= mLogicCamera->GetX();
 	//textureCoordinates.y -= mLogicCamera->GetY();
 
 	if (mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
