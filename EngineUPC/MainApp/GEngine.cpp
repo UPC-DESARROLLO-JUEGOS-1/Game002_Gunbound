@@ -11,8 +11,8 @@ void GEngine::Initialize() {
 	mProjectileManager = new GProjectileManager(this);
 	mTurnManager = new GTurnManager(this);
 	
-	mPlayer->Initialize(GameApp::WIDTH*0.5f, 200, "Sprites/player.png");
-	mPlayer2->Initialize(GameApp::WIDTH*0.5f+ GameApp::WIDTH*0.2f, GameApp::HEIGHT, "Sprites/player.png");
+	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT*0.4, "Sprites/player.png");
+	mPlayer2->Initialize(GameApp::WIDTH*0.5f+ GameApp::WIDTH*0.2f, GameApp::HEIGHT*0.4, "Sprites/player.png");
 
 	mWorld->Initialize(0, 0, "Sprites/world.png");
 	mProjectileManager->Initialize();

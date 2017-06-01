@@ -89,7 +89,7 @@ void GWorld::Update(float dt) {
 
 	//sx = sx < limitLeftX ? limitLeftX : sx;
 	//sx = sx < 0 ? 0 : sx;
-	sy = sy < 0 ? 0 : sy;
+	//sy = sy < 0 ? 0 : sy;
 
 	sy += mOffsetY;
 
