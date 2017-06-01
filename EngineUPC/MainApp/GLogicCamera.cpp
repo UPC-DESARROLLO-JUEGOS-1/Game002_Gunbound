@@ -25,15 +25,19 @@ void GLogicCamera::Update(float dt) {
 		float cx = mCurrentTarget->GetX();
 		float cy = mCurrentTarget->GetY();
 		float ww = mWorld->GetWidth();
+		float wh = mWorld->GetHeight();
 		float limitRightX = ww - mHWidth;
-
+		float limitDownXY= wh - mHHeight;
 
 		mX = cx - mHWidth;
 		mY = cy - mHHeight;
 		//if (cx > mHWidth) { mX = cx - mHWidth; }
 		if (cx < mHWidth) { mX = 0; }
 		else if (cx > limitRightX) { mX = cx - (mHWidth + (cx - limitRightX)); }
+		else if (cy > limitDownXY) { mY = cy - (mHHeight + (cy - limitDownXY)); }
 
-		//if (cy > mHHeight) { mY = cy - mHHeight; }
+		if (!mCurrentTarget->IsAlive()) {
+			SetCurrentTarget(mEngine->GetTurnManager()->GetActivePlayer());
+		}
 	}
 }

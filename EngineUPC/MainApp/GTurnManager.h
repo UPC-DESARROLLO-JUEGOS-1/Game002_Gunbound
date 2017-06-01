@@ -12,6 +12,8 @@ public:
 	{}
 	~GTurnManager() {}
 
+	GPlayer* GetActivePlayer() { return mActivePlayer; }
+
 	void Initialize();
 	void Update(float dt);
 

@@ -18,7 +18,7 @@ public:
 	void Update(float dt);
 	void Draw(float dt);
 
-	void CreateProjectile(GBaseProjectile* newProjectile) { mProjectileGroup.push_back(newProjectile); }
+	void CreateProjectile(float x, float y, float angle, float strength);
 	std::vector<GBaseProjectile*>* GetProjectiles() { return &mProjectileGroup; }
 
 private:

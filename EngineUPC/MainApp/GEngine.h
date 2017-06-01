@@ -25,6 +25,8 @@ public:
 	GPlayer* GetPlayer() { return mPlayer; }
 	GPlayer* GetPlayer2() { return mPlayer2; }
 	GLogicCamera* GetLogicCamera() { return mLogicCamera; }
+	GProjectileManager* GetProjectileManager() { return mProjectileManager; }
+	GTurnManager* GetTurnManager() { return mTurnManager; }
 
 	void Initialize();
 	void Update(float dt);
@@ -32,8 +34,6 @@ public:
 
 	void OnKeyDown(SDL_Keycode key);
 	void OnKeyUp(SDL_Keycode key);
-
-	void OnPlayerShot(GBaseProjectile* newProjectile);
 
 private:
 	GPlayer* mPlayer;
