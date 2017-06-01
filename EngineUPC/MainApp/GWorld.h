@@ -21,6 +21,7 @@ public:
 	void Initialize(float x, float y, std::string path);
 	bool ExistsTerrainIn(int x, int y);
 	void ExplodeTerrainIn(int x, int y, int radio);
+	float GetFloorHeightIn(int x, int y);
 
 	void Update(float dt);
 	void Draw(float dt);

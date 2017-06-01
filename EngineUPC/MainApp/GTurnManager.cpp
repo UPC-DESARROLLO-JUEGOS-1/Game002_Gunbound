@@ -32,6 +32,7 @@ void GTurnManager::OnKeyUp(SDL_Keycode key)
 void GTurnManager::ChangeActivePlayer()
 {
 	std::cout << "Player Changed" << std::endl;
+	mActivePlayer->GetControl()->SetInactive();
 
 	switch (mActivePlayerIndex)
 	{

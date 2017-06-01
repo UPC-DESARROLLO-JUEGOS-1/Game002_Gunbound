@@ -14,8 +14,8 @@ public:
 
 	float inline GetX() { return mX; }
 	float inline GetY() { return mY; }
-	float inline SetX(float x) { mX = x; }
-	float inline SetY(float y) { mY = y; }
+	void inline SetX(float x) { mX = x; }
+	void inline SetY(float y) { mY = y; }
 
 	float inline GetRotation() { return mSprite.GetRotationZ(); }
 	void inline SetRotation(float value) { mSprite.SetRotationZ(value); }

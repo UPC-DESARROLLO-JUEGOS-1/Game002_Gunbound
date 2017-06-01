@@ -3,13 +3,14 @@
 #include <SDL\SDL.h>
 #include <FrameworkUPC\Sprite.h>
 #include <FrameworkUPC\Quad.h>
+#include "GWorld.h"
 
 class GPlayer;
 
 class GPlayerControl
 {
 public:
-	GPlayerControl(GPlayer* player);
+	GPlayerControl(GPlayer* player, GEngine* engine);
 	~GPlayerControl();
 
 	void OnKeyDown(SDL_Keycode key);
@@ -18,8 +19,14 @@ public:
 	void Initialize(Sprite* playerBody, Sprite* cannonBody);
 	void Update(float dt);
 
-private:
+	void SetInactive()
+	{
+		mIsRight = mIsLeft = mIsUp = mIsDown = mIsSpacePressed = false;
+		mAlreadyShot = mChargingShot = false;
+	}
 
+private:
+	GEngine* mEngine;
 	bool mIsRight, mIsLeft, mIsUp, mIsDown, mIsSpacePressed;
 
 	float mMoveSpeed;
@@ -36,6 +43,8 @@ private:
 	Sprite* mPlayerBody;
 	Sprite* mCannonBody;
 	Quad* mStrengthChargeBar;
+
+	GWorld* mWorld;
 
 	void ChargeShot();
 	void Shoot();

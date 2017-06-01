@@ -20,7 +20,7 @@ void GPlayer::Initialize(float x, float y, std::string path) {
 	mCannon.SetY(mY - 6);
 	mCannon.SetPivot(0.0f, 1.0f);
 
-	mPlayerControl = new GPlayerControl(this);
+	mPlayerControl = new GPlayerControl(this, mEngine);
 	mPlayerControl->Initialize(&mSprite, &mCannon);
 }
 

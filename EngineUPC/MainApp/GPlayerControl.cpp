@@ -3,7 +3,8 @@
 #include "GPlayer.h"
 #include <FrameworkUPC\MathUtils.h>
 
-GPlayerControl::GPlayerControl(GPlayer* player) :
+GPlayerControl::GPlayerControl(GPlayer* player, GEngine* engine) :
+	mEngine(engine),
 	mIsLeft(false), mIsRight(false),
 	mIsUp(false), mIsDown(false),
 	mIsSpacePressed(false),
@@ -26,6 +27,7 @@ void GPlayerControl::Initialize(Sprite* playerBody, Sprite* cannonBody) {
 	mPlayerBody = playerBody;
 	mCannonBody = cannonBody;
 	mStrengthChargeBar=GunboundGameApp::GET_GAMEAPP()->GetHud()->GetPlayerChargeBar();
+	mWorld = mEngine->GetWorld();
 }
 
 void GPlayerControl::OnKeyDown(SDL_Keycode key) {
@@ -102,6 +104,19 @@ void GPlayerControl::Update(float dt)
 	if (mIsLeft) { currentSpeed -= mMoveSpeed; mDirection = -1; }
 	if (mIsRight) { currentSpeed += mMoveSpeed; mDirection = 1; }
 	mPlayer->Translate(currentSpeed*dt, 0);
+
+	Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates(mPlayer->GetX()+mPlayerBody->GetVisibleWidth()*0.5f, mPlayer->GetY() + mPlayerBody->GetVisibleHeight());
+
+	float gravity = 500;
+	if (mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
+	{
+		mPlayer->SetY(mWorld->GetFloorHeightIn(textureCoordinates.x, textureCoordinates.y)- mPlayerBody->GetVisibleHeight());
+	}
+	else
+	{
+		mPlayer->Translate(0, gravity*dt);
+	}
+
 
 	mPlayerBody->SetScaleX(mDirection);
 	mCannonBody->SetScaleX(mDirection);
