@@ -23,6 +23,7 @@ private:
 	bool mIsRight, mIsLeft, mIsUp, mIsDown, mIsSpacePressed;
 
 	float mMoveSpeed;
+	short mDirection;
 	float mCurrentAngle;
 	float mAngleChangeSpeed;
 

@@ -52,8 +52,8 @@ void Sprite::Update(float dt)
 		glm::vec3 pivotPos(width*pivot.x, height*pivot.y, 0.0f);
 
 		result = glm::translate(result, translate);
-		result = glm::scale(result, scale);
 		result = glm::translate(result, pivotPos);
+		result = glm::scale(result, scale);
 		result = glm::rotate(result, rotationZ, rotation);
 		result = glm::translate(result, -pivotPos);
 

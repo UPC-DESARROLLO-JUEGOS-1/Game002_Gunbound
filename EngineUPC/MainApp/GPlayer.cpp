@@ -13,6 +13,7 @@ void GPlayer::Initialize(float x, float y, std::string path) {
 	GBaseActor::Initialize(x, y, path);
 
 	mY -= mSprite.GetHeight() - 30;
+	mSprite.SetPivot(0.5f);
 
 	mCannon.Initialize(mX + mSprite.GetVisibleWidth()*0.7f, mY, "Sprites/cannon.png");
 	mCannon.SetRenderCamera(GameFramework::GET_FRAMEWORK()->GetCamera());
