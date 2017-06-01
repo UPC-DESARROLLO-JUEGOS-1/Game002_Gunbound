@@ -8,7 +8,7 @@ GPlayerControl::GPlayerControl(GPlayer* player, GEngine* engine) :
 	mIsLeft(false), mIsRight(false),
 	mIsUp(false), mIsDown(false),
 	mIsSpacePressed(false),
-	mMoveSpeed(600),
+	mMoveSpeed(200),
 	mDirection(1),
 	mCurrentAngle(-M_PI*0.25),
 	mAngleChangeSpeed(M_PI*0.25),
