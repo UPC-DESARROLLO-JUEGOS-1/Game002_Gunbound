@@ -68,6 +68,11 @@ void GBaseProjectile::Update(float dt)
 		this->KillObject();
 	}
 
+	// calculamos limites
+	if ((mX < 0 || mX > mWorld->GetWidth()) || (mY > mWorld->GetHeight())) {
+		this->KillObject();
+	}
+
 	GBaseActor::Update(dt);
 }
 
@@ -77,7 +82,6 @@ void GBaseProjectile::Draw(float dt)
 
 	GBaseActor::Draw(dt);
 }
-
 
 GBaseProjectile::~GBaseProjectile() {
 	GBaseActor::~GBaseActor();
