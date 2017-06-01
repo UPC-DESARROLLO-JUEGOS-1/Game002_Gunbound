@@ -4,11 +4,12 @@
 #include "GWorldForces.h"
 
 class GLogicCamera;
+class GEngine;
 
 class GWorld
 {
 public:
-	GWorld();
+	GWorld(GEngine* engine);
 	~GWorld()
 	{
 		delete mWorldForces;
@@ -24,6 +25,8 @@ public:
 	void Update(float dt);
 	void Draw(float dt);
 
+	Vector2 ConvertToWorldTextureCoordinates(int x, int y);
+
 private:
 	int mX;
 	int mY;
@@ -31,6 +34,7 @@ private:
 	int mWorldWidth;
 	int mWorldHeight;
 	Sprite mSprite;
+	GEngine* mEngine;
 	GLogicCamera* mLogicCamera;
 	GWorldForces* mWorldForces;
 

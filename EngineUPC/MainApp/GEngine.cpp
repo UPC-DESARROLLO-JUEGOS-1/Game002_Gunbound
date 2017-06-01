@@ -7,17 +7,17 @@ void GEngine::Initialize() {
 	mLogicCamera = new GLogicCamera(this);
 	mPlayer = new GPlayer(this);
 	mPlayer2 = new GPlayer(this);
-	mWorld = new GWorld();
-	mProjectileManager = new GProjectileManager();
+	mWorld = new GWorld(this);
+	mProjectileManager = new GProjectileManager(this);
 	mTurnManager = new GTurnManager(this);
 	
-
-	mLogicCamera->Initialize();
-	mPlayer->Initialize(GameApp::WIDTH*0.5f, GameApp::HEIGHT, "Sprites/player.png");
+	mPlayer->Initialize(GameApp::WIDTH*0.5f, 200, "Sprites/player.png");
 	mPlayer2->Initialize(GameApp::WIDTH*0.5f+ GameApp::WIDTH*0.2f, GameApp::HEIGHT, "Sprites/player.png");
+
 	mWorld->Initialize(0, 0, "Sprites/world.png");
 	mProjectileManager->Initialize();
 	mTurnManager->Initialize();
+	mLogicCamera->Initialize();
 
 	// After All
 	mLogicCamera->SetCurrentTarget(mPlayer);
