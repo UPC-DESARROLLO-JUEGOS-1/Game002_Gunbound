@@ -106,10 +106,13 @@ void GPlayerControl::Update(float dt)
 	mPlayer->Translate(currentSpeed*dt, 0);
 
 	Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates(mPlayer->GetX()+mPlayerBody->GetVisibleWidth()*0.5f, mPlayer->GetY() + mPlayerBody->GetVisibleHeight());
-	//textureCoordinates.x -= camera->GetX();
-	//textureCoordinates.y -= mLogicCamera->GetY();
-	float gravity = 50;
-	if (!mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
+
+	float gravity = 500;
+	if (mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
+	{
+		mPlayer->SetY(mWorld->GetFloorHeightIn(textureCoordinates.x, textureCoordinates.y)- mPlayerBody->GetVisibleHeight());
+	}
+	else
 	{
 		mPlayer->Translate(0, gravity*dt);
 	}

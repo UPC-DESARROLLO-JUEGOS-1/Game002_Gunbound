@@ -76,6 +76,30 @@ void GWorld::ExplodeTerrainIn(int x, int y, int radius) {
 	}
 }
 
+float GWorld::GetFloorHeightIn(int x, int y)
+{
+	bool inArea = InsideArea(x, y);
+	float result = y;
+
+	if (inArea)
+	{
+		ImageContent* imageContent = mSprite.GetImageContent();
+		int j = y;
+		while (j >= 0)
+		{
+			NColor color = imageContent->GetPixel(x, j);
+			if (color.a == 0)
+			{
+				result = j + 1;
+				break;
+			}
+			j--;
+		}
+	}
+
+	return result + mY + mOffsetY;
+}
+
 bool GWorld::InsideArea(int x, int y) {
 	return 
 		(x >= 0 && x < mWorldWidth) && 
