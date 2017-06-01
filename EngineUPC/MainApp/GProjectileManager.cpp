@@ -24,7 +24,7 @@ void GProjectileManager::Update(float dt)
 			GLogicCamera* camera = mEngine->GetLogicCamera();
 			Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates((*it)->GetX(), (*it)->GetY());
 			//textureCoordinates.x -= camera->GetX();
-			textureCoordinates.y -= camera->GetY();
+			//textureCoordinates.y += camera->GetY();
 
 			//std::cout << "bullet x: " << textureCoordinates.x << " y: " << textureCoordinates.y << "\n";
 
