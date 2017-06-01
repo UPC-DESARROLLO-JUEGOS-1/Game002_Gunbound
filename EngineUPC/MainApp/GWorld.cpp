@@ -84,7 +84,9 @@ float GWorld::GetFloorHeightIn(int x, int y)
 	if (inArea)
 	{
 		ImageContent* imageContent = mSprite.GetImageContent();
-		int j = y;
+		
+		//Check Upwards
+		int j = y-1;
 		while (j >= 0)
 		{
 			NColor color = imageContent->GetPixel(x, j);
@@ -94,6 +96,22 @@ float GWorld::GetFloorHeightIn(int x, int y)
 				break;
 			}
 			j--;
+		}
+
+		//Check Downwards
+		if (result == y)
+		{
+			j = y+1;
+			while (j < imageContent->GetHeight())
+			{
+				NColor color = imageContent->GetPixel(x, j);
+				if (color.a != 0)
+				{
+					result = j - 1;
+					break;
+				}
+				j++;
+			}
 		}
 	}
 

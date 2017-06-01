@@ -106,11 +106,22 @@ void GPlayerControl::Update(float dt)
 	mPlayer->Translate(currentSpeed*dt, 0);
 
 	Vector2 textureCoordinates = mWorld->ConvertToWorldTextureCoordinates(mPlayer->GetX()+mPlayerBody->GetVisibleWidth()*0.5f, mPlayer->GetY() + mPlayerBody->GetVisibleHeight());
+	Vector2 cornerPivotCoordinates = mWorld->ConvertToWorldTextureCoordinates(mPlayer->GetX() + mPlayerBody->GetVisibleWidth()*0.5f + mDirection*mPlayerBody->GetVisibleWidth()*0.5f, mPlayer->GetY() + mPlayerBody->GetVisibleHeight());
+
+	float centerFloorY = mWorld->GetFloorHeightIn(textureCoordinates.x, textureCoordinates.y);
+	float cornerFloorY = mWorld->GetFloorHeightIn(cornerPivotCoordinates.x, cornerPivotCoordinates.y);
+
+	float dx = cornerPivotCoordinates.x - textureCoordinates.x;
+	float dy = cornerFloorY - centerFloorY;
+	
+	float angle = atan2f(dy, dx*mDirection);
+
+	mPlayerBody->SetRotationZ(angle);
 
 	float gravity = 500;
 	if (mWorld->ExistsTerrainIn(textureCoordinates.x, textureCoordinates.y))
 	{
-		mPlayer->SetY(mWorld->GetFloorHeightIn(textureCoordinates.x, textureCoordinates.y)- mPlayerBody->GetVisibleHeight());
+		mPlayer->SetY(centerFloorY - mPlayerBody->GetVisibleHeight());
 	}
 	else
 	{
